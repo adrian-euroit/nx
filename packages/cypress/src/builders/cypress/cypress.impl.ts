@@ -23,6 +23,7 @@ export interface CypressBuilderOptions extends JsonObject {
   headless: boolean;
   exit: boolean;
   parallel: boolean;
+  ciBuildId?: string;
   record: boolean;
   key?: string;
   tsConfig: string;
@@ -74,6 +75,7 @@ function run(
         options.parallel,
         options.watch,
         baseUrl,
+        options.ciBuildId,
         options.browser,
         options.env,
         options.spec
@@ -110,6 +112,7 @@ function initCypress(
   parallel: boolean,
   isWatching: boolean,
   baseUrl: string,
+  ciBuildId?: string,
   browser?: string,
   env?: Record<string, string>,
   spec?: string
@@ -134,6 +137,9 @@ function initCypress(
   }
   if (spec) {
     options.spec = spec;
+  }
+  if (ciBuildId) {
+    options.ciBuildId = ciBuildId;
   }
 
   options.exit = exit;

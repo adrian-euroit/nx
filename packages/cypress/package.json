@@ -4,7 +4,7 @@
   "description": "Cypress plugin for Nx",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nrwl/nx.git"
+    "url": "git+https://github.com/adrian-euroit/nx.git"
   },
   "keywords": [
     "Monorepo",
